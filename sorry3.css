@@ -1,182 +1,168 @@
 /* General styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fce4ec;  /* Light pink background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Background Image */
-    background: url('sorry.jpg') no-repeat center center fixed;
-    background-size: cover; /* Make image cover the entire screen */
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .apology-box {
-    background-color: #fbd6d6;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
-    border: 2px solid #f48fb1;  /* Soft pink border */
-    transition: transform 0.3s ease;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fce4ec; /* Light pink background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Background Image */
+  background: url('sorry.jpg') no-repeat center center fixed;
+  background-size: cover; /* Make image cover the entire screen */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px; /* Add some padding for smaller screens */
+}
+
+.apology-box {
+  background-color: #fbd6d6;
+  padding: 20px; /* Reduce padding for smaller screens */
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 90%; /* Adjust width to fit smaller screens */
+  border: 2px solid #f48fb1; /* Soft pink border */
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem; /* Adjust font size for smaller screens */
+  color: #f06292; /* Soft pink for the text */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+p, .intro-text, .image-caption {
+  font-size: 1rem; /* Adjust font size for smaller screens */
+  color: #f48fb1; /* Light pink for all other text */
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* Image Section */
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.apology-image {
+  width: 120px; /* Smaller image size for phones */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f48fb1;
+  margin-bottom: 10px;
+}
+
+.image-caption {
+  font-size: 1.2rem; /* Smaller font size for captions */
+  color: #f06292; /* Same soft pink as headings */
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Slider container */
+.slider-container {
+  width: 100%;
+  position: relative;
+}
+
+.slider {
+  width: 100%;
+  height: 15px; /* Reduce track height for smaller screens */
+  background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
+  border-radius: 20px;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 15px;
+  background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
+  border-radius: 20px;
+}
+
+.slider::-webkit-slider-thumb {
+  width: 25px; /* Adjust thumb size for smaller screens */
+  height: 25px;
+  background-color: #f06292;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #f48fb1;
+  transition: all 0.2s ease;
+  margin-top: 1px;
+  position: relative;
+}
+
+/* Fun Button */
+.fun-button {
+  background-color: #f48fb1;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Adjust padding for smaller screens */
+  font-size: 1rem; /* Smaller button font size */
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.fun-button:hover {
+  background-color: #f06292;
+  transform: scale(1.1);
+}
+
+.fun-button:active {
+  transform: scale(1);
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
   h1 {
-    font-size: 2.8rem;
-    color: #f48fb1;
-    margin-bottom: 20px;
-    font-weight: bold;
+      font-size: 1.5rem;
   }
-  
-  .intro-text {
-    font-size: 1.3rem;
-    color: #f06292;
-    margin-bottom: 30px;
-    font-style: italic;
+  p, .intro-text, .image-caption {
+      font-size: 0.9rem;
   }
-  
-  /* Image Section */
-  .image-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
   .apology-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #f48fb1;
-    margin-bottom: 10px;
+      width: 100px;
+      height: 100px;
   }
-  
-  .image-caption {
-    font-size: 1.5rem;
-    color: #f06292;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  
-  /* Slider container */
-  .slider-container {
-    width: 100%;
-    position: relative;
-  }
-  
-  .slider {
-    width: 100%;
-    height: 17px;  /* Track height */
-    background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
-    border-radius: 20px;
-    -webkit-appearance: none;
-    appearance: none;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .slider::-webkit-slider-runnable-track {
-    height: 17px;
-    background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
-    border-radius: 20px;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    width: 30px;
-    height: 30px;
-    background-color: #f06292;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 5px solid #f48fb1;
-    transition: all 0.2s ease;
-    margin-top: 1px;
-    position: relative;
-  }
-  
-  /* Pointy effect below the slider thumb */
-  .slider::-webkit-slider-thumb::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 12px solid #f06292;
-  }
-  
-  .slider-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #f48fb1;
-  }
-  
-  .left-label, .right-label {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .left-label {
-    color: #f06292;
-  }
-  
-  .right-label {
-    color: #f8bbd0;
-  }
-  
-  /* Fun Button */
   .fun-button {
-    background-color: #f48fb1;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      font-size: 0.9rem;
+      padding: 8px 16px;
   }
-  
-  .fun-button:hover {
-    background-color: #f06292;
-    transform: scale(1.1);
+  .apology-box {
+      padding: 15px;
+      border-radius: 20px;
   }
-  
-  .fun-button:active {
-    transform: scale(1);
-  }
-  
-  /* Extra playful text */
-  .extra-text {
-    font-size: 1.2rem;
-    color: #f06292;
-    font-style: italic;
-    margin-top: 20px;
-  }
-  
-  .extra-text p {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #f48fb1;
-  }
-  
+}
+/* Styling for the slider labels */
+.slider-labels span {
+  color: #f48fb1; /* Light pink for all labels */
+  font-family: 'Arial', sans-serif; /* Cute and simple font */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Optional: Add hover effect for a playful interaction */
+.slider-labels span:hover {
+  color: #f06292; /* Slightly darker pink on hover */
+  text-shadow: 1px 1px 2px #ffc1e3; /* Soft glow effect */
+}
