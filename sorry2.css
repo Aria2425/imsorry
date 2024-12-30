@@ -1,0 +1,151 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fce4ec;  /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .apology-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    border: 2px solid #f48fb1;  /* Soft pink border */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #f48fb1;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Slider container */
+  .slider-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .slider {
+    width: 100%;
+    height: 17px;  /* Track height */
+    background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
+    border-radius: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .slider::-webkit-slider-runnable-track {
+    height: 17px; /* Track height to match the slider */
+    background: linear-gradient(to right, #f8bbd0, #f48fb1, #f06292);
+    border-radius: 20px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    width: 30px;  /* Thumb width */
+    height: 70px;  /* Thumb height */
+    background-color: #f06292;
+    border-radius: 70px;
+    cursor: pointer;
+    border: 5px solid #f48fb1;
+    transition: all 0.2s ease;
+    margin-top: 1px;  /* Vertically center the thumb */
+    position: relative;  /* Required for the pseudo-element to position relative to the thumb */
+  }
+  
+  .slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);  /* Slightly enlarge thumb on hover */
+  }
+  
+  /* Adding the pointy effect */
+  .slider::-webkit-slider-thumb::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;  /* Position the triangle below the thumb */
+    left: 50%;  /* Center the triangle */
+    transform: translateX(-50%);  /* Offset by half to truly center */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #f06292;  /* The color of the "pointy" triangle */
+  }
+  
+  /* Add some sparkle effects */
+  .slider:focus {
+    outline: none;
+  }
+  
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #f48fb1;
+  }
+  
+  .left-label, .right-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .left-label {
+    color: #f06292; /* Pastel pink for the left label */
+  }
+  
+  .right-label {
+    color: #f8bbd0; /* Lighter pastel pink for the right label */
+  }
+  .button {
+    display: inline-block;
+    background-color: #f90064;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #f90064;
+    transform: translateY(-2px);  /* Slight hover effect */
+  }
+  
+  .button:active {
+    background-color: #f90064;
+    transform: translateY(2px);  /* Pressed effect */
+  }
+  
+  /* Confetti particles */
+  .confetti {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #f90064;
+    animation: fall 2s linear infinite, twinkle 1s infinite;
+  }
