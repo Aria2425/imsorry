@@ -407,7 +407,7 @@ html, body {
     padding: 40px 40px 60px; /* Increased bottom padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     max-width: 2000px; /* Increased max width of the box */
-    width: 90%; /* Adjusts the box to be responsive */
+    width: 100%; /* Adjusts the box to be responsive */
     margin: 0 auto;
     font-size: 16px;
     line-height: 1.5;
